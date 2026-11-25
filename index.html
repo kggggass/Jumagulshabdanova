@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жумагул Шабданова - Мукам үндүү, көп кырдуу талант</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/montserrat@5.0.0/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/playfair-display@5.0.0/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond@5.0.0/index.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #1a0f1f 0%, #0f0a1a 50%, #1a0f1f 100%);
+            color: #f5f5f5;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, rgba(212, 175, 55, 0.3), transparent),
+                radial-gradient(2px 2px at 60% 70%, rgba(212, 175, 55, 0.2), transparent),
+                radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.2), transparent),
+                radial-gradient(1px 1px at 80% 10%, rgba(212, 175, 55, 0.3), transparent),
+                radial-gradient(2px 2px at 90% 60%, rgba(255, 255, 255, 0.15), transparent),
+                radial-gradient(1px 1px at 33% 80%, rgba(212, 175, 55, 0.25), transparent);
+            background-size: 200% 200%;
+            z-index: -1;
+            animation: twinkle 15s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        nav {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(15, 10, 26, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 1000; padding: 18px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        nav ul {
+            display: flex; justify-content: center; list-style: none;
+            gap: 28px; flex-wrap: wrap; padding: 0 20px;
+        }
+        nav a {
+            color: #e8e8e8; text-decoration: none;
+            font-size: 0.88rem; font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            position: relative; padding: 5px 0;
+        }
+        nav a::after {
+            content: ''; position: absolute; bottom: 0; left: 50%;
+            width: 0; height: 2px;
+            background: linear-gradient(90deg, #D4AF37, #F4D03F);
+            transition: all 0.3s ease; transform: translateX(-50%);
+        }
+        nav a:hover { color: #F4D03F; }
+        nav a:hover::after { width: 100%; }
+
+        .hero {
+            position: relative; min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; overflow: hidden;
+            padding-top: 80px;
+        }
+        .hero-bg {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: contain;
+            object-position: center;
+            background: #000;
+            z-index: 0;
+        }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: 
+                linear-gradient(to bottom, rgba(15, 10, 26, 0.4), rgba(15, 10, 26, 0.85)),
+                radial-gradient(circle at center, transparent 30%, rgba(15, 10, 26, 0.9) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            padding: 40px 30px;
+            animation: fadeInUp 1.8s ease;
+        }
+        .hero-content .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #F4D03F;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            background: linear-gradient(135deg, #F4D03F 0%, #D4AF37 50%, #F4D03F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+            margin-bottom: 25px;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+        .hero-content p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            font-weight: 400;
+            letter-spacing: 4px;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .hero-divider {
+            width: 120px; height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            margin: 30px auto;
+        }
+
+        .section {
+            padding: 120px 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.visible { opacity: 1; transform: translateY(0); }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: #D4AF37;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            background: linear-gradient(135deg, #F4D03F 0%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .section-desc {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #c8b8d4;
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+            line-height: 1.8;
+        }
+        .section-divider {
+            display: flex; align-items: center; justify-content: center;
+            gap: 15px; margin: 25px 0;
+        }
+        .section-divider::before, .section-divider::after {
+            content: ''; width: 60px; height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37);
+        }
+        .section-divider::after {
+            background: linear-gradient(90deg, #D4AF37, transparent);
+        }
+        .section-divider span {
+            color: #D4AF37; font-size: 1.2rem;
+        }
+
+        .panel-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #1a1a2e;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .panel-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(212, 175, 55, 0.25);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+        .panel-card-image {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+        .panel-card:hover .panel-card-image {
+            transform: scale(1.05);
+        }
+        .panel-card-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to top, 
+                rgba(15, 10, 26, 0.95) 0%, 
+                rgba(15, 10, 26, 0.4) 40%, 
+                transparent 70%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            transition: all 0.5s ease;
+        }
+        .panel-card:hover .panel-card-overlay {
+            background: linear-gradient(to top, 
+                rgba(15, 10, 26, 0.98) 0%, 
+                rgba(15, 10, 26, 0.6) 50%, 
+                rgba(15, 10, 26, 0.3) 100%);
+        }
+        .panel-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #F4D03F;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+        .panel-card-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: #e8e8e8;
+            font-style: italic;
+            margin-bottom: 20px;
+            max-width: 500px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        .panel-card:hover .panel-card-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .panel-card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            color: #F4D03F;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            width: fit-content;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .panel-card:hover .panel-card-btn {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.1s;
+        }
+        .panel-card-btn:hover {
+            background: linear-gradient(135deg, #D4AF37, #F4D03F);
+            color: #0f0a1a;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(10, 5, 20, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 2000;
+            overflow-y: auto;
+            animation: fadeIn 0.4s ease;
+        }
+        .modal.active { display: block; }
+        .modal-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 30px 50px;
+        }
+        .modal-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: -60px; right: 0;
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #F4D03F;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-close:hover {
+            background: #D4AF37;
+            color: #0f0a1a;
+            transform: rotate(90deg);
+        }
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #F4D03F 0%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+        .modal-desc {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #c8b8d4;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .modal-gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: #1a1a2e;
+        }
+        .modal-gallery-item:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
+        }
+        .modal-gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        .modal-gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Байланыш */
+        .contact {
+            background: linear-gradient(135deg, rgba(26, 15, 31, 0.8), rgba(15, 10, 26, 0.8));
+            backdrop-filter: blur(10px);
+            padding: 120px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+        }
+        .contact-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+        .contact-info {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #e8e8e8;
+            font-style: italic;
+        }
+        .contact-phone {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #F4D03F 0%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+        }
+
+        /* Социалдык тармактардын баскычтары */
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            min-width: 220px;
+            justify-content: center;
+        }
+        .social-btn:hover {
+            transform: translateY(-5px);
+        }
+        .social-btn svg {
+            flex-shrink: 0;
+        }
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #ffffff;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+        .btn-whatsapp:hover {
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+        }
+        .btn-telegram {
+            background: linear-gradient(135deg, #2AABEE, #229ED9);
+            color: #ffffff;
+            box-shadow: 0 10px 30px rgba(42, 171, 238, 0.3);
+        }
+        .btn-telegram:hover {
+            box-shadow: 0 15px 40px rgba(42, 171, 238, 0.5);
+        }
+        .btn-instagram {
+            background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #ffffff;
+            box-shadow: 0 10px 30px rgba(220, 39, 67, 0.3);
+        }
+        .btn-instagram:hover {
+            box-shadow: 0 15px 40px rgba(220, 39, 67, 0.5);
+        }
+
+        .social-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: #c8b8d4;
+            font-style: italic;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #0a0514;
+            color: #8a7a94;
+            font-size: 0.9rem;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 2px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.8rem; }
+            .hero-content p { font-size: 1.2rem; letter-spacing: 2px; }
+            .hero-content .subtitle { font-size: 1rem; letter-spacing: 4px; }
+            .section-title { font-size: 2.2rem; }
+            .modal-title { font-size: 2rem; }
+            .panel-card-image { height: 400px; }
+            .panel-card-title { font-size: 1.6rem; }
+            .panel-card-text { font-size: 1rem; }
+            .panel-card-overlay { padding: 25px; }
+            .contact-phone { font-size: 1.8rem; }
+            nav ul { gap: 12px; font-size: 0.75rem; }
+            nav a { letter-spacing: 1px; }
+            .social-buttons { flex-direction: column; align-items: center; }
+            .social-btn { width: 100%; max-width: 320px; }
+            .contact-inner { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#home">Башкы бет</a></li>
+        <li><a href="#zharzhar">Жар-Жар</a></li>
+        <li><a href="#kyzuzatuu">Кыз узатуу</a></li>
+        <li><a href="#biychiler">Бийчилер</a></li>
+        <li><a href="#jubilee">Юбилей</a></li>
+        <li><a href="#accordion">Аккардеон</a></li>
+        <li><a href="#openings">Ачылыштар</a></li>
+        <li><a href="#contact">Байланыш</a></li>
+    </ul>
+</nav>
+
+<section id="home" class="hero">
+    <img src="https://i.ibb.co/7x5yVnxy/52192-CC2-F5-EC-4-BB1-ADCA-57-FEA0-EB52-AE.png" alt="Жумагул Шабданова" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="subtitle">✦ Салт ырчысы ✦</div>
+        <h1>Жумагул Шабданова</h1>
+        <div class="hero-divider"></div>
+        <p>Мукам үндүү, көп кырдуу таланттын ээси</p>
+    </div>
+</section>
+
+<section id="zharzhar" class="section">
+    <div class="section-header">
+        <div class="section-number">— 🌸 —</div>
+        <h2 class="section-title">Жар-Жар</h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-desc">«Жар-жар» — кыздын акыркы кыздык чагынан жарына карай жолун ыр менен коштогон ыйык салт. Бул ырда ата-эненин ак батасы, дос-жарандын ак ниет тилеги жана жаш жүрөктүн толкундануусу биригет...</p>
+    </div>
+    <div class="panel-card" onclick="openModal('zharzhar')">
+        <img src="https://i.ibb.co/GQ3L8xmP/IMG-4105.jpg" alt="Жар-Жар" class="panel-card-image">
+        <div class="panel-card-overlay">
+            <h3 class="panel-card-title">Жар-Жар</h3>
+            <p class="panel-card-text">Кыздын жарына жолуккан жолундагы ыйык ыр...</p>
+            <div class="panel-card-btn">
+                <span>Сүрөттөрдү көрүү</span>
+                <span>→</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="kyzuzatuu" class="section">
+    <div class="section-header">
+        <div class="section-number">— 🌸 —</div>
+        <h2 class="section-title">Кыз узатуу</h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-desc">«Кыз — кыялдын гүлү, ата-эненин көркү» — деп бекеринен айтылган эмес. Кыз узатуу той — көздөн жаш, жүрөктөн сезим, тилектен ак бата агылган улуу учур...</p>
+    </div>
+    <div class="panel-card" onclick="openModal('kyzuzatuu')">
+        <img src="https://i.ibb.co/NgQzHn3t/IMG-4079.jpg" alt="Кыз узатуу" class="panel-card-image">
+        <div class="panel-card-overlay">
+            <h3 class="panel-card-title">Кыз узатуу</h3>
+            <p class="panel-card-text">Ата-эненин ак батасы, кыздын ак ниети...</p>
+            <div class="panel-card-btn">
+                <span>Сүрөттөрдү көрүү</span>
+                <span>→</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="biychiler" class="section">
+    <div class="section-header">
+        <div class="section-number">— 🌸 —</div>
+        <h2 class="section-title">Бийчилер</h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-desc">Бий — сөзсүз тил, жүрөктүн үнү. Ар бир кыймыл — тарых, ар бир бурулуш — поэзия. Той-тамашанын көркүн ачкан бийчилердин өнөрү...</p>
+    </div>
+    <div class="panel-card" onclick="openModal('biychiler')">
+        <img src="https://i.ibb.co/8nGzRxLw/IMG-4080.jpg" alt="Бийчилер" class="panel-card-image">
+        <div class="panel-card-overlay">
+            <h3 class="panel-card-title">Бийчилер</h3>
+            <p class="panel-card-text">Жүрөктүн үнү, кыймылдын поэзиясы...</p>
+            <div class="panel-card-btn">
+                <span>Сүрөттөрдү көрүү</span>
+                <span>→</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="jubilee" class="section">
+    <div class="section-header">
+        <div class="section-number">— 🌸 —</div>
+        <h2 class="section-title">Юбилей жана Жеңетек той</h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-desc">Юбилей — өмүрдүн бийик белестерин белгилөө, жеңетек той — жаңы өмүргө ак бата берүү. Ар бир маараке — тарыхтын барактарында калчу ыйык учур...</p>
+    </div>
+    <div class="panel-card" onclick="openModal('jubilee')">
+        <img src="https://i.ibb.co/Xgx5PCD/IMG-4092.jpg" alt="Юбилей" class="panel-card-image">
+        <div class="panel-card-overlay">
+            <h3 class="panel-card-title">Юбилей жана Жеңетек той</h3>
+            <p class="panel-card-text">Өмүрдүн бийик белестерин белгилөө...</p>
+            <div class="panel-card-btn">
+                <span>Сүрөттөрдү көрүү</span>
+                <span>→</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="accordion" class="section">
+    <div class="section-header">
+        <div class="section-number">— 🌸 —</div>
+        <h2 class="section-title">Аккордеон менен жандуу ыр</h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-desc">Аккордеондун мукам үнү, ырчынын жан дүйнөсүнөн чыккан ыр — экөө бириккенде сыйкырдуу мелодия жаралат. Бул — жүрөктөн жүрөккө жеткен тилсиз байланыш...</p>
+    </div>
+    <div class="panel-card" onclick="openModal('accordion')">
+        <img src="https://i.ibb.co/7x5yVnxy/52192-CC2-F5-EC-4-BB1-ADCA-57-FEA0-EB52-AE.png" alt="Аккордеон" class="panel-card-image">
+        <div class="panel-card-overlay">
+            <h3 class="panel-card-title">Аккордеон менен жандуу ыр</h3>
+            <p class="panel-card-text">Жүрөктөн жүрөккө жеткен сыйкырдуу үн...</p>
+            <div class="panel-card-btn">
+                <span>Сүрөттөрдү көрүү</span>
+                <span>→</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="openings" class="section">
+    <div class="section-header">
+        <div class="section-number">— 🌸 —</div>
+        <h2 class="section-title">Ачылыштарга кызмат кылуу</h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-desc">Жаңы башталыштар — жаңы үмүт, жаңы ийгилик. Ар бир ачылыштын көркүн ачкан маанилүү учурду ыр менен коштоо — бул тарыхка калчу белги...</p>
+    </div>
+    <div class="panel-card" onclick="openModal('openings')">
+        <img src="https://i.ibb.co/7x5yVnxy/52192-CC2-F5-EC-4-BB1-ADCA-57-FEA0-EB52-AE.png" alt="Ачылыштар" class="panel-card-image">
+        <div class="panel-card-overlay">
+            <h3 class="panel-card-title">Ачылыштарга кызмат кылуу</h3>
+            <p class="panel-card-text">Жаңы башталыштардын ыр менен коштолушу...</p>
+            <div class="panel-card-btn">
+                <span>Сүрөттөрдү көрүү</span>
+                <span>→</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Байланыш - WhatsApp, Telegram, Instagram менен -->
+<section id="contact" class="contact">
+    <div class="contact-inner">
+        <div class="section-header">
+            <div class="section-number">— Байланыш —</div>
+            <h2 class="section-title">Той-тамашаңыздын көркүн биз менен баштаңыз</h2>
+            <div class="section-divider"><span>✦</span></div>
+            <p class="section-desc">Ар бир маанилүү учурду ыр менен коштоп, эсте каларлык кылуу — биздин милдет. Бизге кайрылыңыз, сиздин той-мааракени ыйык салт менен коштойлу.</p>
+        </div>
+        <div class="contact-info">Телефон номери:</div>
+        <div class="contact-phone">+996 779 476 223</div>
+
+        <div class="social-label">✦ Биз менен байланышыңыз ✦</div>
+
+        <div class="social-buttons">
+            <a href="https://wa.me/996779476223?text=Саламатсызбы!%20Сайттан%20жазып%20жатам.%20Кызмат%20боюнча%20маалымат%20сурайын%20деп%20елем." class="social-btn btn-whatsapp" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.973.911 3.268.911 3.182 0 5.768-2.587 5.768-5.766.001-3.182-2.585-5.769-5.766-5.769zm6.643 8.073c-.278.785-1.622 1.497-2.262 1.571-.599.07-1.18.27-3.956-.93-3.336-1.44-5.47-4.98-5.634-5.203-.164-.223-1.332-1.775-1.332-3.382 0-1.608.845-2.397 1.145-2.725.3-.328.656-.41.878-.41.222 0 .444.001.638.01.206.01.481-.078.754.576.278.666.945 2.312 1.028 2.479.083.167.139.361.028.583-.111.222-.167.361-.333.556-.167.195-.35.434-.5.583-.167.167-.34.348-.146.681.195.334.864 1.435 1.856 2.318 1.273 1.133 2.348 1.484 2.681 1.649.334.167.528.139.722-.083.195-.222.834-.972 1.056-1.306.222-.334.444-.278.75-.167.306.111 1.945.917 2.279 1.084.334.167.556.25.639.389.083.139.083.806-.195 1.591z"/></svg>
+                WhatsApp
+            </a>
+            <a href="https://t.me/+996779476223" class="social-btn btn-telegram" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                Telegram
+            </a>
+            <a href="https://instagram.com/jumagul_shabdanova_ala_buka_" class="social-btn btn-instagram" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                Instagram
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>✦ © 2026 Жумагул Шабданова. Бардык укуктар корголгон. ✦</p>
+</footer>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <p class="modal-desc" id="modalDesc"></p>
+        </div>
+        <div class="modal-gallery" id="modalGallery"></div>
+        <div style="text-align: center; margin-top: 50px;">
+            <div class="social-buttons" style="justify-content: center;">
+                <a href="#" class="social-btn btn-whatsapp" target="_blank" id="modalWaBtn">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.973.911 3.268.911 3.182 0 5.768-2.587 5.768-5.766.001-3.182-2.585-5.769-5.766-5.769zm6.643 8.073c-.278.785-1.622 1.497-2.262 1.571-.599.07-1.18.27-3.956-.93-3.336-1.44-5.47-4.98-5.634-5.203-.164-.223-1.332-1.775-1.332-3.382 0-1.608.845-2.397 1.145-2.725.3-.328.656-.41.878-.41.222 0 .444.001.638.01.206.01.481-.078.754.576.278.666.945 2.312 1.028 2.479.083.167.139.361.028.583-.111.222-.167.361-.333.556-.167.195-.35.434-.5.583-.167.167-.34.348-.146.681.195.334.864 1.435 1.856 2.318 1.273 1.133 2.348 1.484 2.681 1.649.334.167.528.139.722-.083.195-.222.834-.972 1.056-1.306.222-.334.444-.278.75-.167.306.111 1.945.917 2.279 1.084.334.167.556.25.639.389.083.139.083.806-.195 1.591z"/></svg>
+                    WhatsApp
+                </a>
+                <a href="https://t.me/+996779476223" class="social-btn btn-telegram" target="_blank">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    Telegram
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const panelsData = {
+        zharzhar: {
+            title: 'Жар-Жар',
+            desc: 'Кыздын жарына жолуккан жолундагы ыйык ыр. Ата-эненин ак батасы, достордун тилеги, жаш жүрөктүн толкундануусу...',
+            images: [
+                'https://i.ibb.co/GQ3L8xmP/IMG-4105.jpg',
+                'https://i.ibb.co/JwsxKSfy/IMG-4104.jpg',
+                'https://i.ibb.co/hRtd31fZ/IMG-4107.jpg',
+                'https://i.ibb.co/2fxwCx2/IMG-4081.jpg'
+            ],
+            wa: 'Жар-Жар кызматы боюнча маалымат сурайын деп элем.'
+        },
+        kyzuzatuu: {
+            title: 'Кыз узатуу',
+            desc: 'Кыз — кыялдын гүлү, ата-эненин көркү. Кыз узатуу той — көздөн жаш, жүрөктөн сезим, тилектен ак бата агылган улуу учур...',
+            images: [
+                'https://i.ibb.co/NgQzHn3t/IMG-4079.jpg',
+                'https://i.ibb.co/WWPGNTdj/IMG-4078.jpg',
+                'https://i.ibb.co/DDXCNTwW/IMG-4093.jpg',
+                'https://i.ibb.co/HTr4QT1C/IMG-4095.jpg'
+            ],
+            wa: 'Кыз узатуу тойго кызмат боюнча маалымат сурайын деп элем.'
+        },
+        biychiler: {
+            title: 'Бийчилер',
+            desc: 'Бий — сөзсүз тил, жүрөктүн үнү. Той-тамашанын көркүн ачкан бийчилердин өнөрү...',
+            images: [
+                'https://i.ibb.co/8nGzRxLw/IMG-4080.jpg',
+                'https://i.ibb.co/NgF1nb6p/IMG-4088.jpg',
+                'https://i.ibb.co/Y7ZXLnFF/IMG-4090.jpg',
+                'https://i.ibb.co/s9y37xbJ/IMG-4091.jpg',
+                'https://i.ibb.co/xqrGzqH5/IMG-4087.jpg'
+            ],
+            wa: 'Бийчилер кызматы боюнча маалымат сурайын деп элем.'
+        },
+        jubilee: {
+            title: 'Юбилей жана Жеңетек той',
+            desc: 'Юбилей — өмүрдүн бийик белестерин белгилөө, жеңетек той — жаңы өмүргө ак бата берүү...',
+            images: [
+                'https://i.ibb.co/Xgx5PCD/IMG-4092.jpg',
+                'https://i.ibb.co/d4fcWGkm/IMG-4094.jpg',
+                'https://i.ibb.co/jkh316qx/IMG-4097.jpg',
+                'https://i.ibb.co/VYVGmm6f/IMG-4083.jpg'
+            ],
+            wa: 'Юбилей жана Жеңетек той боюнча маалымат сурайын деп элем.'
+        },
+        accordion: {
+            title: 'Аккордеон менен жандуу ыр',
+            desc: 'Аккордеондун мукам үнү, ырчынын жан дүйнөсүнөн чыккан ыр — экөө бириккенде сыйкырдуу мелодия жаралат...',
+            images: [
+                'https://i.ibb.co/7x5yVnxy/52192-CC2-F5-EC-4-BB1-ADCA-57-FEA0-EB52-AE.png'
+            ],
+            wa: 'Аккордеон менен жандуу ыр кызматы боюнча маалымат сурайын деп элем.'
+        },
+        openings: {
+            title: 'Ачылыштарга кызмат кылуу',
+            desc: 'Жаңы башталыштар — жаңы үмүт, жаңы ийгилик. Ар бир ачылыштын көркүн ачкан маанилүү учурду ыр менен коштоо...',
+            images: [
+                'https://i.ibb.co/7x5yVnxy/52192-CC2-F5-EC-4-BB1-ADCA-57-FEA0-EB52-AE.png'
+            ],
+            wa: 'Ачылыштарга кызмат кылуу боюнча маалымат сурайын деп элем.'
+        }
+    };
+
+    function openModal(panelKey) {
+        const data = panelsData[panelKey];
+        const modal = document.getElementById('modal');
+        const title = document.getElementById('modalTitle');
+        const desc = document.getElementById('modalDesc');
+        const gallery = document.getElementById('modalGallery');
+        const waBtn = document.getElementById('modalWaBtn');
+
+        title.textContent = data.title;
+        desc.textContent = data.desc;
+
+        gallery.innerHTML = data.images.map(img => 
+            `<div class="modal-gallery-item"><img src="${img}" alt="${data.title}" loading="lazy"></div>`
+        ).join('');
+
+        waBtn.href = `https://wa.me/996779476223?text=Саламатсызбы!%20${encodeURIComponent(data.wa)}`;
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('modal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll(".section");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add("visible");
+            });
+        }, { threshold: 0.15 });
+        sections.forEach(section => observer.observe(section));
+    });
+</script>
+</body>
+</html>
