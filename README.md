@@ -1,1 +1,1 @@
-# JumagulSvahabdano
+# Jumagulshabdanova
